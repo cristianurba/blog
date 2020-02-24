@@ -1,0 +1,50 @@
+<div class="container">
+    <form [formGroup]="formPost">
+        <div class="form-group">
+            <label>Titulo</label>
+            <input type="text" class="form-control" formControlName="titulo">
+            <p class="error" *ngIf="formPost.controls.titulo.errors?.required && formPost.controls.titulo.touched">
+                El campo
+                Título es obligatorio</p>
+            <p class="error" *ngIf="formPost.controls.titulo.errors?.minlength && formPost.controls.titulo.dirty">El
+                campo Titulo debe tener al menos 3 caracteres</p>
+        </div>
+        <div class="form-group">
+            <label>Texto</label>
+            <input type="text" class="form-control" formControlName="texto">
+            <p class="error" *ngIf="formPost.controls.texto.errors?.required && formPost.controls.texto.touched">
+                El campo
+                Texto es obligatorio</p>
+            <p class="error" *ngIf="formPost.controls.texto.errors?.minlength && formPost.controls.texto.dirty">El
+                campo Texto debe tener al menos 3 caracteres</p>
+        </div>
+        <div class="form-group">
+            <label>Autor</label>
+            <input type="text" class="form-control" formControlName="autor">
+            <p class="error" *ngIf="formPost.controls.autor.errors?.required && formPost.controls.autor.touched">
+                El campo
+                Autor es obligatorio</p>
+            <p class="error" *ngIf="formPost.controls.autor.errors?.minlength && formPost.controls.autor.dirty">El
+                campo Autor debe tener al menos 3 caracteres</p>
+        </div>
+        <div class="form-group">
+            <label>URL de la imagen</label>
+            <input type="text" class="form-control" formControlName="imagen">
+            <p class="error" *ngIf="formPost.controls.imagen.errors?.required && formPost.controls.imagen.touched">
+                El campo
+                Imagen es obligatorio</p>
+        </div>
+        <label>Categoría</label>
+        <select formControlName="categoria">
+            <option value="persona">Persona</option>
+            <option value="personaje">Personaje</option>
+            <p class="error"
+                *ngIf="formPost.controls.categoria.errors?.required && formPost.controls.categoria.touched">
+                El campo
+                Categoria es obligatorio</p>
+        </select>
+        <input type="submit" value="Enviar" class="btn btn-block btn-success" (click)="enviarPost()"
+            [routerLink]="['/blog']" [disabled]="!formPost.valid">
+
+    </form>
+</div>

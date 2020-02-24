@@ -1,0 +1,53 @@
+.card{
+    margin: auto;
+    color: black;
+    opacity: 80%;
+    position: relative;
+
+}
+
+.card:hover{
+    opacity: 100%;
+    transform: scale(105%);
+}
+
+.categoria{
+    width: 90%;
+    margin: .5em auto;
+    padding: 1em;
+    background: #212121;
+    color: #f3f3f3;
+    border-radius: 15px;
+}
+
+.container{
+    background: #212121;
+    color: #f3f3f3;
+    padding: 2em;
+    margin: .5em auto;
+    border-radius: 15px;
+}
+
+.buttonBorrar{
+position: absolute;
+bottom: .5em;
+right: .5em;
+}
+
+.imgCont{
+position: relative;
+height: 200px;
+width: 100%;
+margin: 5px auto;
+overflow: hidden;
+}
+
+.imgCont img{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    border: 1px solid black;
+}

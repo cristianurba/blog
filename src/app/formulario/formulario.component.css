@@ -1,0 +1,12 @@
+.container{
+    background: #212121;
+    color: #f3f3f3;
+    padding: 2em;
+    border-radius: 15px;
+    margin-top: .5em;
+}
+
+.error{
+    color: red;
+}
+

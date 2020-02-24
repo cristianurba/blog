@@ -1,0 +1,22 @@
+<div class="categoria">
+    <h5>Filtrar Categoría</h5>
+    <select class="filtro custom-select" (change)="manejarFiltro($event)">
+        <option value="">Todos</option>
+        <option value="persona">Persona</option>
+        <option value="personaje">Personaje</option>
+    </select>
+</div>
+
+<div class="container row">
+    <div class="card col-md-5 mb-3 " *ngFor="let post of listaPost">
+        <div class="imgCont"><img src="{{post.imagen}}" class="" alt="..."></div>
+        <div class="card-body">
+            <h5 class="card-title">{{post.titulo}}</h5>
+            <p class="card-text">{{post.texto}}</p>
+            <p class="card-text"><small class="text-muted">Autor: {{post.autor}}</small></p>
+            <p class="card-text"><small class="text-muted">Fecha de
+                    publicación: {{post.fecha | date: 'hh:mm:ss dd-MM-y'}}</small></p>
+            <button type="button" class="btn btn-danger buttonBorrar" (click)="manejarBorrar(post)">BORRAR</button>
+        </div>
+    </div>
+</div>
